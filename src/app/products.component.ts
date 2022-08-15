@@ -11,10 +11,14 @@ export class ProductsComponent {
     constructor() {
         setTimeout(() => {
             this.isDisabled = true;
-        }, 3000);
+        }, 1000);
     }
 
     onAddProduct() {
         this.products.push(this.productName);
+    }
+
+    onRemoveProduct(product: string){
+        this.products = this.products.filter(x => x !== product);
     }
 }
