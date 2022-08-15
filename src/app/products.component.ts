@@ -6,14 +6,15 @@ import { Component } from "@angular/core";
 })
 export class ProductsComponent {
     productName = 'A book';
-
+    products: string[] = [];
+    isDisabled = false;
     constructor() {
         setTimeout(() => {
-            this.productName = 'A tree';
+            this.isDisabled = true;
         }, 3000);
     }
 
-    ChangeName() {
-        this.productName = 'A Boat';
+    onAddProduct() {
+        this.products.push(this.productName);
     }
 }
