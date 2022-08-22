@@ -7,15 +7,17 @@ import { Component } from "@angular/core";
 export class ProductsComponent {
     productName = 'A book';
     products: string[] = [];
-    isDisabled = false;
+    isDisabled = true;
     constructor() {
         setTimeout(() => {
-            this.isDisabled = true;
+            this.isDisabled = false;
         }, 1000);
     }
 
-    onAddProduct() {
-        this.products.push(this.productName);
+    onAddProduct(form : any) {
+            if(form.status === "VALID"){
+                this.products.push(form.value.productName);
+            }
     }
 
     onRemoveProduct(product: string){
