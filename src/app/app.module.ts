@@ -8,6 +8,8 @@ import { ProductsComponent } from './products.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsService } from './products.service';
 import { HomeComponent } from './home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HomeComponent } from './home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
